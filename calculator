@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Calculator</title>
+
+    <style>
+
+        body{
+            margin:0;
+            padding:0;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            font-family:Arial;
+            background:linear-gradient(to right,#ff9a9e,#fad0c4,#fbc2eb);
+        }
+
+        .calculator{
+            background:white;
+            padding:30px;
+            border-radius:20px;
+            box-shadow:0px 5px 20px rgba(0,0,0,0.3);
+            text-align:center;
+        }
+
+        h1{
+            color:#ff4d6d;
+            margin-bottom:20px;
+        }
+
+        #display{
+            width:300px;
+            height:60px;
+            font-size:30px;
+            text-align:right;
+            border:2px solid #ff4d6d;
+            border-radius:10px;
+            padding-right:10px;
+            margin-bottom:20px;
+        }
+
+        button{
+            width:65px;
+            height:65px;
+            margin:5px;
+            font-size:25px;
+            border:none;
+            border-radius:15px;
+            cursor:pointer;
+            background:#ff4d6d;
+            color:white;
+        }
+
+        button:hover{
+            background:#d63384;
+        }
+
+        .footer{
+            margin-top:20px;
+            color:gray;
+            font-size:16px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="calculator">
+
+        <h1>My Calculator</h1>
+
+        <input type="text" id="display" readonly>
+
+        <br>
+
+        <button onclick="addValue('7')">7</button>
+        <button onclick="addValue('8')">8</button>
+        <button onclick="addValue('9')">9</button>
+        <button onclick="addValue('/')">÷</button>
+
+        <br>
+
+        <button onclick="addValue('4')">4</button>
+        <button onclick="addValue('5')">5</button>
+        <button onclick="addValue('6')">6</button>
+        <button onclick="addValue('*')">×</button>
+
+        <br>
+
+        <button onclick="addValue('1')">1</button>
+        <button onclick="addValue('2')">2</button>
+        <button onclick="addValue('3')">3</button>
+        <button onclick="addValue('-')">−</button>
+
+        <br>
+
+        <button onclick="addValue('0')">0</button>
+        <button onclick="clearDisplay()">C</button>
+        <button onclick="calculate()">=</button>
+        <button onclick="addValue('+')">+</button>
+
+        <div class="footer">
+            Created by R. Padmavathi
+        </div>
+
+    </div>
+
+    <script>
+
+        function addValue(value){
+            document.getElementById("display").value += value;
+        }
+
+        function clearDisplay(){
+            document.getElementById("display").value = "";
+        }
+
+        function calculate(){
+            document.getElementById("display").value =
+            eval(document.getElementById("display").value);
+        }
+
+    </script>
+
+</body>
+
+</html>
